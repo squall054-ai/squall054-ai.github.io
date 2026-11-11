@@ -54,7 +54,7 @@
   {
     "id": "p03",
     "file": "Panorama03.jpg",
-    "name": "Zona de entrenamiento",
+    "name": "Peso Libre y Racks",
     "subtitle": "Un espacio para superarte",
     "yaw": -55,
     "links": [
@@ -119,8 +119,8 @@
   {
     "id": "p04",
     "file": "Panorama04.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Peso Libre y Racks",
+    "subtitle": "Valentía para dar el primer paso",
     "yaw": 260,
     "links": [
       {
@@ -149,8 +149,8 @@
   {
     "id": "p05",
     "file": "Panorama05.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Peso Libre y Racks",
+    "subtitle": "Mentalidad fuerte, objetivos claros",
     "links": [
       {
         "nodeId": "p03",
@@ -172,8 +172,8 @@
   {
     "id": "p06",
     "file": "Panorama06.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Entrenamiento Funcional / Turf",
+    "subtitle": "Move with purpose",
     "yaw": 260,
     "links": [
       {
@@ -223,8 +223,8 @@
   {
     "id": "p07",
     "file": "Panorama07.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Entrenamiento Funcional / Turf",
+    "subtitle": "Descubre tu potencia",
     "yaw": 260,
     "links": [
       {
@@ -260,8 +260,8 @@
   {
     "id": "p08",
     "file": "Panorama08.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Entrenamiento Funcional / Turf",
+    "subtitle": "La resistencia se construye",
     "yaw": 260,
     "links": [
       {
@@ -297,8 +297,8 @@
   {
     "id": "p09",
     "file": "Panorama09.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Zona de Cardio",
+    "subtitle": "Push your limits",
     "yaw": 260,
     "links": [
       {
@@ -344,8 +344,8 @@
   {
     "id": "p10",
     "file": "Panorama10.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Zona de Cardio",
+    "subtitle": "Entrena. Aprende. Repeat",
     "yaw": 260,
     "links": [
       {
@@ -360,8 +360,8 @@
   {
     "id": "p11",
     "file": "Panorama11.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Cycling",
+    "subtitle": "Feel your power",
     "yaw": 260,
     "links": [
       {
@@ -369,6 +369,9 @@
         "position": {
           "yaw": "164.4deg",
           "pitch": "-46deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       },
       {
@@ -383,8 +386,8 @@
   {
     "id": "p12",
     "file": "Panorama12.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Cycling",
+    "subtitle": "Encuentra tu ritmo",
     "yaw": 260,
     "links": [
       {
@@ -399,8 +402,8 @@
   {
     "id": "p13",
     "file": "Panorama13.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Kids Zone",
+    "subtitle": "Tu mejor versión empieza aquí",
     "yaw": 260,
     "links": [
       {
@@ -415,8 +418,8 @@
   {
     "id": "p14",
     "file": "Panorama14.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Recepción",
+    "subtitle": "Convierte la intención en acción",
     "yaw": 260,
     "links": [
       {
@@ -431,8 +434,8 @@
   {
     "id": "p15",
     "file": "Panorama15.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Peso Libre y Racks",
+    "subtitle": "Cada repetición cuenta",
     "yaw": 260,
     "links": [
       {
@@ -468,8 +471,8 @@
   {
     "id": "p16",
     "file": "Panorama16.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Administración",
+    "subtitle": "Encuentra tu ritmo",
     "yaw": 260,
     "links": [
       {
@@ -491,8 +494,8 @@
   {
     "id": "p17",
     "file": "Panorama17.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Peso Libre y Racks",
+    "subtitle": "Respira, enfócate y continúa",
     "yaw": 260,
     "links": [
       {
@@ -535,8 +538,8 @@
   {
     "id": "p18",
     "file": "Panorama18.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Fuerza y Peso Integrado",
+    "subtitle": "Small steps. Real progress",
     "yaw": 260,
     "links": [
       {
@@ -565,8 +568,8 @@
   {
     "id": "p19",
     "file": "Panorama19.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Snacks",
+    "subtitle": "Activa tu energía",
     "yaw": 260,
     "links": [
       {
@@ -596,7 +599,7 @@
     "id": "p20",
     "file": "Panorama20.jpg",
     "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "subtitle": "Fuerza y Peso Integrado",
     "yaw": 260,
     "links": [
       {

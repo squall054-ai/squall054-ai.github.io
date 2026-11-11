@@ -99,7 +99,7 @@ try {
     if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)
       || event.altKey || event.ctrlKey || event.metaKey
       || event.target.closest?.('input, textarea, select, [contenteditable="true"], dialog')
-      || $('instructions').open) return;
+      || document.querySelector('dialog[open]')) return;
     event.preventDefault();
     if (moving || event.repeat) return;
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
@@ -184,6 +184,21 @@ try {
     catch { $('hint').textContent = 'Puedes ampliar la vista desde el menú de tu navegador.'; $('hint').classList.remove('fade'); }
   };
   $('help').onclick = () => $('instructions').showModal();
+  function showPlan(visible) {
+    $('plan-preview').hidden = !visible;
+    $('toggle-plan').setAttribute('aria-expanded', String(visible));
+    $('plan-toggle-label').textContent = visible ? 'Ocultar' : 'Mostrar';
+  }
+  showPlan(!matchMedia('(max-width: 600px), (max-height: 600px)').matches);
+  $('toggle-plan').onclick = () => showPlan($('plan-preview').hidden);
+  $('expand-plan').onclick = () => $('plan-dialog').showModal();
+  $('close-plan').onclick = () => $('plan-dialog').close();
+  $('plan-dialog').addEventListener('click', event => {
+    if (event.target === $('plan-dialog')) {
+      const rect = $('plan-dialog').getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) $('plan-dialog').close();
+    }
+  });
   $('close-help').onclick = $('got-it').onclick = () => $('instructions').close();
   setTimeout(() => $('hint').classList.add('fade'), 14000);
   viewer.addEventListener('panorama-error', error);

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111813">
+  <meta name="description" content="Explora 1Fit en un recorrido virtual de 360 grados.">
+  <title>1Fit · Recorrido virtual</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111813'/%3E%3Ctext x='20' y='48' font-family='Arial' font-size='48' font-weight='900' fill='%23d8f449'%3E1%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/core.css">
+  <link rel="stylesheet" href="vendor/virtual-tour-plugin.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","@photo-sphere-viewer/core":"./vendor/core.js","@photo-sphere-viewer/virtual-tour-plugin":"./vendor/virtual-tour-plugin.js","@photo-sphere-viewer/equirectangular-tiles-adapter":"./vendor/equirectangular-tiles-adapter.js"}}</script>
+</head>
+<body>
+  <main id="tour" aria-label="Recorrido virtual de 1Fit">
+    <div id="viewer"></div>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="1Fit, inicio"><span>1</span>Fit<span class="brand-dot">®</span></a>
+      <div class="tour-label"><span class="live-dot"></span> RECORRIDO VIRTUAL <span class="tag">360°</span></div>
+      <button id="help" class="icon-button" aria-label="Cómo navegar" title="Cómo navegar">?</button>
+    </header>
+    <div class="scene-heading"><p>DESCUBRE EL ESPACIO</p><h1 id="scene-name">Acceso</h1><span id="scene-subtitle">La bienvenida a 1Fit</span></div>
+    <aside class="controls" aria-label="Controles del visor">
+      <button id="vr" class="icon-button" aria-label="Abrir modo VR para gafas" title="Realidad virtual" style="font-size:14px;font-weight:bold">VR</button>
+      <button id="zoom-in" class="icon-button" aria-label="Acercar" title="Acercar">+</button>
+      <button id="zoom-out" class="icon-button" aria-label="Alejar" title="Alejar">−</button>
+      <button id="fullscreen" class="icon-button" aria-label="Pantalla completa" title="Pantalla completa">⛶</button>
+    </aside>
+    <div id="hint" role="status">Arrastra para mirar · ↑ avanzar · ↓ retroceder · ← → girar</div>
+    <footer class="bottom-bar">
+      <div class="gallery-label"><span>EXPLORA 1FIT</span><span id="counter">01 / 03</span></div>
+      <nav id="scenes" aria-label="Zonas del recorrido"></nav>
+    </footer>
+    <div id="error" role="alert" hidden><h2>No pudimos abrir el panorama</h2><p>Comprueba que el servidor local siga abierto y vuelve a intentarlo.</p><button onclick="location.reload()">Reintentar</button></div>
+    <dialog id="instructions"><button id="close-help" class="icon-button" aria-label="Cerrar ayuda">×</button><p class="eyebrow">EXPLORA A TU RITMO</p><h2>Estás dentro.</h2><p>Arrastra con el ratón o con un dedo para mirar alrededor. Usa la rueda, dos dedos o los botones + y − para acercarte.</p><p>Pulsa los marcadores del espacio para avanzar. En el teclado: ↑ avanza hacia el punto conectado que tienes enfrente, ↓ retrocede y ← → giran la vista. También puedes elegir una zona en las miniaturas inferiores; la rueda sobre esa tira desplaza las miniaturas.</p><button id="got-it" class="primary">Comenzar a explorar →</button></dialog>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1272 @@
+[
+  {
+    "id": "p01",
+    "file": "Panorama01.jpg",
+    "name": "Acceso",
+    "subtitle": "La bienvenida a 1Fit",
+    "yaw": 0,
+    "links": [
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "0deg",
+          "pitch": "-15deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p02",
+    "file": "Panorama02.jpg",
+    "name": "Recepción",
+    "subtitle": "Conoce nuestro espacio",
+    "yaw": 0,
+    "links": [
+      {
+        "nodeId": "p01",
+        "position": {
+          "yaw": "174deg",
+          "pitch": "-15deg"
+        }
+      },
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "0deg",
+          "pitch": "-15deg"
+        }
+      },
+      {
+        "nodeId": "p06",
+        "position": {
+          "yaw": "48.4deg",
+          "pitch": "-13deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p03",
+    "file": "Panorama03.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": -55,
+    "links": [
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "178deg",
+          "pitch": "-18deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "21.6deg",
+          "pitch": "-20.9deg"
+        }
+      },
+      {
+        "nodeId": "p04",
+        "position": {
+          "yaw": "348.6deg",
+          "pitch": "-20.2deg"
+        }
+      },
+      {
+        "nodeId": "p06",
+        "position": {
+          "yaw": "84.8deg",
+          "pitch": "-15.5deg"
+        }
+      },
+      {
+        "nodeId": "p07",
+        "position": {
+          "yaw": "70.7deg",
+          "pitch": "-10.9deg"
+        }
+      },
+      {
+        "nodeId": "p08",
+        "position": {
+          "yaw": "98.9deg",
+          "pitch": "-8.9deg"
+        }
+      },
+      {
+        "nodeId": "p15",
+        "position": {
+          "yaw": "259deg",
+          "pitch": "-23.5deg"
+        }
+      },
+      {
+        "nodeId": "p17",
+        "position": {
+          "yaw": "267.1deg",
+          "pitch": "-15.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p04",
+    "file": "Panorama04.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p05",
+    "file": "Panorama05.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "117.5deg",
+          "pitch": "-19.5deg"
+        }
+      },
+      {
+        "nodeId": "p04",
+        "position": {
+          "yaw": "202.1deg",
+          "pitch": "-28.7deg"
+        }
+      }
+    ],
+    "yaw": 0
+  },
+  {
+    "id": "p06",
+    "file": "Panorama06.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "39.1deg",
+          "pitch": "-16.1deg"
+        }
+      },
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "74.8deg",
+          "pitch": "-21.5deg"
+        }
+      },
+      {
+        "nodeId": "p07",
+        "position": {
+          "yaw": "218.2deg",
+          "pitch": "-23.1deg"
+        }
+      },
+      {
+        "nodeId": "p08",
+        "position": {
+          "yaw": "274.2deg",
+          "pitch": "-15.1deg"
+        }
+      },
+      {
+        "nodeId": "p09",
+        "position": {
+          "yaw": "277.4deg",
+          "pitch": "-10deg"
+        }
+      },
+      {
+        "nodeId": "p13",
+        "position": {
+          "yaw": "329.2deg",
+          "pitch": "-8.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p07",
+    "file": "Panorama07.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "114.2deg",
+          "pitch": "-11.6deg"
+        }
+      },
+      {
+        "nodeId": "p06",
+        "position": {
+          "yaw": "93.9deg",
+          "pitch": "-24.6deg"
+        }
+      },
+      {
+        "nodeId": "p08",
+        "position": {
+          "yaw": "18.1deg",
+          "pitch": "-17.8deg"
+        }
+      },
+      {
+        "nodeId": "p09",
+        "position": {
+          "yaw": "8.2deg",
+          "pitch": "-11.7deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p08",
+    "file": "Panorama08.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "175.1deg",
+          "pitch": "-10deg"
+        }
+      },
+      {
+        "nodeId": "p06",
+        "position": {
+          "yaw": "183.2deg",
+          "pitch": "-16.8deg"
+        }
+      },
+      {
+        "nodeId": "p07",
+        "position": {
+          "yaw": "232.6deg",
+          "pitch": "-22.3deg"
+        }
+      },
+      {
+        "nodeId": "p09",
+        "position": {
+          "yaw": "5deg",
+          "pitch": "-27.7deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p09",
+    "file": "Panorama09.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p06",
+        "position": {
+          "yaw": "179.3deg",
+          "pitch": "-12.6deg"
+        }
+      },
+      {
+        "nodeId": "p07",
+        "position": {
+          "yaw": "208.7deg",
+          "pitch": "-14.4deg"
+        }
+      },
+      {
+        "nodeId": "p08",
+        "position": {
+          "yaw": "179.9deg",
+          "pitch": "-30.7deg"
+        }
+      },
+      {
+        "nodeId": "p10",
+        "position": {
+          "yaw": "268.5deg",
+          "pitch": "-18.5deg"
+        }
+      },
+      {
+        "nodeId": "p11",
+        "position": {
+          "yaw": "70.7deg",
+          "pitch": "-18.6deg"
+        },
+        "data": {
+          "marker": "puerta"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p10",
+    "file": "Panorama10.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p09",
+        "position": {
+          "yaw": "13.3deg",
+          "pitch": "-19.1deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p11",
+    "file": "Panorama11.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p09",
+        "position": {
+          "yaw": "164.4deg",
+          "pitch": "-46deg"
+        }
+      },
+      {
+        "nodeId": "p12",
+        "position": {
+          "yaw": "34.6deg",
+          "pitch": "-18.1deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p12",
+    "file": "Panorama12.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p11",
+        "position": {
+          "yaw": "136.4deg",
+          "pitch": "-24.1deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p13",
+    "file": "Panorama13.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p06",
+        "position": {
+          "yaw": "182deg",
+          "pitch": "-19.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p14",
+    "file": "Panorama14.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p15",
+        "position": {
+          "yaw": "246deg",
+          "pitch": "-26.4deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p15",
+    "file": "Panorama15.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "226deg",
+          "pitch": "-23.8deg"
+        }
+      },
+      {
+        "nodeId": "p14",
+        "position": {
+          "yaw": "292deg",
+          "pitch": "-28.5deg"
+        }
+      },
+      {
+        "nodeId": "p16",
+        "position": {
+          "yaw": "356deg",
+          "pitch": "-25.3deg"
+        }
+      },
+      {
+        "nodeId": "p17",
+        "position": {
+          "yaw": "50.4deg",
+          "pitch": "-33.6deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p16",
+    "file": "Panorama16.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p15",
+        "position": {
+          "yaw": "2.7deg",
+          "pitch": "-25.3deg"
+        }
+      },
+      {
+        "nodeId": "p17",
+        "position": {
+          "yaw": "330.2deg",
+          "pitch": "-29.9deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p17",
+    "file": "Panorama17.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "186.5deg",
+          "pitch": "-16.9deg"
+        }
+      },
+      {
+        "nodeId": "p15",
+        "position": {
+          "yaw": "188.6deg",
+          "pitch": "-39.4deg"
+        }
+      },
+      {
+        "nodeId": "p16",
+        "position": {
+          "yaw": "271.4deg",
+          "pitch": "-30.1deg"
+        }
+      },
+      {
+        "nodeId": "p18",
+        "position": {
+          "yaw": "16.6deg",
+          "pitch": "-15.5deg"
+        }
+      },
+      {
+        "nodeId": "p19",
+        "position": {
+          "yaw": "321.5deg",
+          "pitch": "-21.7deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p18",
+    "file": "Panorama18.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p17",
+        "position": {
+          "yaw": "179.5deg",
+          "pitch": "-16.3deg"
+        }
+      },
+      {
+        "nodeId": "p19",
+        "position": {
+          "yaw": "227.7deg",
+          "pitch": "-22.6deg"
+        }
+      },
+      {
+        "nodeId": "p20",
+        "position": {
+          "yaw": "308deg",
+          "pitch": "-19.8deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p19",
+    "file": "Panorama19.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p17",
+        "position": {
+          "yaw": "316.4deg",
+          "pitch": "-18.1deg"
+        }
+      },
+      {
+        "nodeId": "p18",
+        "position": {
+          "yaw": "229deg",
+          "pitch": "-22deg"
+        }
+      },
+      {
+        "nodeId": "p20",
+        "position": {
+          "yaw": "170.9deg",
+          "pitch": "-17.1deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p20",
+    "file": "Panorama20.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p18",
+        "position": {
+          "yaw": "120.8deg",
+          "pitch": "-23.8deg"
+        }
+      },
+      {
+        "nodeId": "p19",
+        "position": {
+          "yaw": "173.6deg",
+          "pitch": "-17.7deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p21",
+    "file": "Panorama21.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p22",
+    "file": "Panorama22.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p23",
+    "file": "Panorama23.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p24",
+    "file": "Panorama24.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p25",
+    "file": "Panorama25.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p26",
+    "file": "Panorama26.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p27",
+    "file": "Panorama27.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p28",
+    "file": "Panorama28.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p29",
+    "file": "Panorama29.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p30",
+    "file": "Panorama30.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p31",
+    "file": "Panorama31.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p32",
+    "file": "Panorama32.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p33",
+    "file": "Panorama33.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p34",
+    "file": "Panorama34.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p35",
+    "file": "Panorama35.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p36",
+    "file": "Panorama36.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p37",
+    "file": "Panorama37.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p38",
+    "file": "Panorama38.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p39",
+    "file": "Panorama39.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p40",
+    "file": "Panorama40.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p41",
+    "file": "Panorama41.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p42",
+    "file": "Panorama42.jpg",
+    "name": "Zona de entrenamiento",
+    "subtitle": "Un espacio para superarte",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p03",
+        "position": {
+          "yaw": "68.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p05",
+        "position": {
+          "yaw": "351.3deg",
+          "pitch": "-28.9deg"
+        }
+      },
+      {
+        "nodeId": "p02",
+        "position": {
+          "yaw": "69.5deg",
+          "pitch": "-10.5deg"
+        }
+      }
+    ]
+  }
+]

@@ -9,8 +9,11 @@
       {
         "nodeId": "p02",
         "position": {
-          "yaw": "0deg",
-          "pitch": "-15deg"
+          "yaw": "6.7deg",
+          "pitch": "-20.3deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       }
     ]
@@ -25,8 +28,11 @@
       {
         "nodeId": "p01",
         "position": {
-          "yaw": "174deg",
-          "pitch": "-15deg"
+          "yaw": "168.3deg",
+          "pitch": "-31.2deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       },
       {

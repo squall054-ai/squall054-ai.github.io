@@ -562,6 +562,27 @@
           "yaw": "308deg",
           "pitch": "-19.8deg"
         }
+      },
+      {
+        "nodeId": "p21",
+        "position": {
+          "yaw": "19.6deg",
+          "pitch": "-29.2deg"
+        }
+      },
+      {
+        "nodeId": "p22",
+        "position": {
+          "yaw": "141.5deg",
+          "pitch": "-21.6deg"
+        }
+      },
+      {
+        "nodeId": "p23",
+        "position": {
+          "yaw": "115.2deg",
+          "pitch": "-15.5deg"
+        }
       }
     ]
   },
@@ -592,14 +613,35 @@
           "yaw": "170.9deg",
           "pitch": "-17.1deg"
         }
+      },
+      {
+        "nodeId": "p21",
+        "position": {
+          "yaw": "214deg",
+          "pitch": "-14.1deg"
+        }
+      },
+      {
+        "nodeId": "p27",
+        "position": {
+          "yaw": "176.6deg",
+          "pitch": "-9.7deg"
+        }
+      },
+      {
+        "nodeId": "p28",
+        "position": {
+          "yaw": "162.2deg",
+          "pitch": "-8.4deg"
+        }
       }
     ]
   },
   {
     "id": "p20",
     "file": "Panorama20.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Fuerza y Peso Integrado",
+    "name": "Fuerza y Racks",
+    "subtitle": "El reto es personal",
     "yaw": 260,
     "links": [
       {
@@ -615,35 +657,70 @@
           "yaw": "173.6deg",
           "pitch": "-17.7deg"
         }
+      },
+      {
+        "nodeId": "p21",
+        "position": {
+          "yaw": "85.2deg",
+          "pitch": "-21deg"
+        }
+      },
+      {
+        "nodeId": "p27",
+        "position": {
+          "yaw": "0.2deg",
+          "pitch": "-18.9deg"
+        }
+      },
+      {
+        "nodeId": "p28",
+        "position": {
+          "yaw": "332.3deg",
+          "pitch": "-13.6deg"
+        }
       }
     ]
   },
   {
     "id": "p21",
     "file": "Panorama21.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Fuerza y Peso Integrado",
+    "subtitle": "Fuerza que se siente",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p18",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "107.3deg",
+          "pitch": "-42.3deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p19",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "94.7deg",
+          "pitch": "-17.3deg"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p20",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "151.1deg",
+          "pitch": "-19.3deg"
+        }
+      },
+      {
+        "nodeId": "p22",
+        "position": {
+          "yaw": "27.8deg",
+          "pitch": "-19deg"
+        }
+      },
+      {
+        "nodeId": "p26",
+        "position": {
+          "yaw": "235.7deg",
+          "pitch": "-11.2deg"
         }
       }
     ]
@@ -651,29 +728,29 @@
   {
     "id": "p22",
     "file": "Panorama22.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Fuerza y Peso Integrado",
+    "subtitle": "Hoy construyes tu mañana",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p18",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "166.6deg",
+          "pitch": "-20.5deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p21",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "187.8deg",
+          "pitch": "-14deg"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p23",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "277.1deg",
+          "pitch": "-30.3deg"
         }
       }
     ]
@@ -681,29 +758,29 @@
   {
     "id": "p23",
     "file": "Panorama23.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Fuerza y Peso Integrado",
+    "subtitle": "Menos excusas, más movimiento",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p18",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "289.6deg",
+          "pitch": "-13.8deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p22",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "244.7deg",
+          "pitch": "-22.1deg"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p24",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "3deg",
+          "pitch": "-20.4deg"
         }
       }
     ]
@@ -711,29 +788,22 @@
   {
     "id": "p24",
     "file": "Panorama24.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Fuerza y Peso Integrado",
+    "subtitle": "Confía en tu proceso",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p23",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "186.2deg",
+          "pitch": "-21deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p25",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
-        }
-      },
-      {
-        "nodeId": "p02",
-        "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "351.2deg",
+          "pitch": "-16deg"
         }
       }
     ]
@@ -741,29 +811,29 @@
   {
     "id": "p25",
     "file": "Panorama25.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Fuerza y Peso Integrado",
+    "subtitle": "Tu disciplina marca la diferencia",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p24",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "203.1deg",
+          "pitch": "-13.1deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p26",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "321.1deg",
+          "pitch": "-27.2deg"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p35",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "69.3deg",
+          "pitch": "-23.2deg"
         }
       }
     ]
@@ -771,29 +841,36 @@
   {
     "id": "p26",
     "file": "Panorama26.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Fuerza y Peso Integrado",
+    "subtitle": "Muévete por lo que te importa",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p25",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "215deg",
+          "pitch": "-24.5deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p21",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "269.6deg",
+          "pitch": "-15.5deg"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p27",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "350.7deg",
+          "pitch": "-12.9deg"
+        }
+      },
+      {
+        "nodeId": "p35",
+        "position": {
+          "yaw": "168.5deg",
+          "pitch": "-17.1deg"
         }
       }
     ]
@@ -801,29 +878,36 @@
   {
     "id": "p27",
     "file": "Panorama27.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Fuerza y Peso Integrado",
+    "subtitle": "La confianza también se entrena",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p19",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "264.4deg",
+          "pitch": "-10.9deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p20",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "265.8deg",
+          "pitch": "-19.6deg"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p26",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "158.7deg",
+          "pitch": "-15.5deg"
+        }
+      },
+      {
+        "nodeId": "p28",
+        "position": {
+          "yaw": "30.1deg",
+          "pitch": "-27.1deg"
         }
       }
     ]
@@ -831,29 +915,39 @@
   {
     "id": "p28",
     "file": "Panorama28.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Fuerza y Peso Integrado",
+    "subtitle": "Un objetivo. Muchas pequeñas victorias",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p19",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "197.2deg",
+          "pitch": "-8.2deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p20",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "194.7deg",
+          "pitch": "-12.7deg"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p27",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "157.1deg",
+          "pitch": "-27.3deg"
+        }
+      },
+      {
+        "nodeId": "p29",
+        "position": {
+          "yaw": "11.3deg",
+          "pitch": "-19.2deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       }
     ]
@@ -861,29 +955,29 @@
   {
     "id": "p29",
     "file": "Panorama29.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Baños y Vestidores W",
+    "subtitle": "Find your strong",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p28",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "161deg",
+          "pitch": "-33deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p30",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "307.1deg",
+          "pitch": "-29deg"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p31",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "30.3deg",
+          "pitch": "-23.2deg"
         }
       }
     ]
@@ -891,29 +985,15 @@
   {
     "id": "p30",
     "file": "Panorama30.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Baños y Vestidores W",
+    "subtitle": "Better sore than sorry",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p29",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
-        }
-      },
-      {
-        "nodeId": "p05",
-        "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
-        }
-      },
-      {
-        "nodeId": "p02",
-        "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "352.8deg",
+          "pitch": "-29.6deg"
         }
       }
     ]
@@ -921,29 +1001,35 @@
   {
     "id": "p31",
     "file": "Panorama31.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Baños y Vestidores W",
+    "subtitle": "Feel your power",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p29",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "158.3deg",
+          "pitch": "-17.9deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p32",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "233.3deg",
+          "pitch": "-6.1deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p33",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "252.7deg",
+          "pitch": "-5.5deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       }
     ]
@@ -951,29 +1037,18 @@
   {
     "id": "p32",
     "file": "Panorama32.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Regaderas W",
+    "subtitle": "Progress over perfection",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p31",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
-        }
-      },
-      {
-        "nodeId": "p05",
-        "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
-        }
-      },
-      {
-        "nodeId": "p02",
-        "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "188.7deg",
+          "pitch": "-43.7deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       }
     ]
@@ -981,29 +1056,25 @@
   {
     "id": "p33",
     "file": "Panorama33.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Sauna W",
+    "subtitle": "Celebra lo que hoy puedes hacer",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p31",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "74.4deg",
+          "pitch": "-33.4deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p34",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
-        }
-      },
-      {
-        "nodeId": "p02",
-        "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "8.3deg",
+          "pitch": "-43.5deg"
         }
       }
     ]
@@ -1011,29 +1082,15 @@
   {
     "id": "p34",
     "file": "Panorama34.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Sauna W",
+    "subtitle": "Reset. Refocus. Restart",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p33",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
-        }
-      },
-      {
-        "nodeId": "p05",
-        "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
-        }
-      },
-      {
-        "nodeId": "p02",
-        "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "179deg",
+          "pitch": "-43.3deg"
         }
       }
     ]
@@ -1041,29 +1098,32 @@
   {
     "id": "p35",
     "file": "Panorama35.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Fuerza y Peso Integrado",
+    "subtitle": "Energía para ir más allá",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p25",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "236.5deg",
+          "pitch": "-20.7deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p26",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "261.5deg",
+          "pitch": "-13.2deg"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p36",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "23deg",
+          "pitch": "-21.5deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       }
     ]
@@ -1071,29 +1131,32 @@
   {
     "id": "p36",
     "file": "Panorama36.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Baños y Vestidores M",
+    "subtitle": "Tu siguiente logro empieza contigo",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p35",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "118deg",
+          "pitch": "-20.1deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p37",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "36.9deg",
+          "pitch": "-37.2deg"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p38",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "275.2deg",
+          "pitch": "-24.5deg"
         }
       }
     ]
@@ -1101,29 +1164,15 @@
   {
     "id": "p37",
     "file": "Panorama37.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Baños y Vestidores M",
+    "subtitle": "El descanso también es parte del progreso",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p36",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
-        }
-      },
-      {
-        "nodeId": "p05",
-        "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
-        }
-      },
-      {
-        "nodeId": "p02",
-        "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "259.8deg",
+          "pitch": "-32.8deg"
         }
       }
     ]
@@ -1131,29 +1180,22 @@
   {
     "id": "p38",
     "file": "Panorama38.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Baños y Vestidores M",
+    "subtitle": "You vs You",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p36",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "171.6deg",
+          "pitch": "-25.4deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p39",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
-        }
-      },
-      {
-        "nodeId": "p02",
-        "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "70.8deg",
+          "pitch": "-43deg"
         }
       }
     ]
@@ -1161,29 +1203,35 @@
   {
     "id": "p39",
     "file": "Panorama39.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Baños y Vestidores M",
+    "subtitle": "Stronger every day",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p38",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "165.9deg",
+          "pitch": "-40.9deg"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p40",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
+          "yaw": "54.3deg",
+          "pitch": "-45.4deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       },
       {
-        "nodeId": "p02",
+        "nodeId": "p41",
         "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "1.5deg",
+          "pitch": "-24.3deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       }
     ]
@@ -1191,29 +1239,18 @@
   {
     "id": "p40",
     "file": "Panorama40.jpg",
-    "name": "Zona de entrenamiento",
+    "name": "Regaderas M",
     "subtitle": "Un espacio para superarte",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p39",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
-        }
-      },
-      {
-        "nodeId": "p05",
-        "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
-        }
-      },
-      {
-        "nodeId": "p02",
-        "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "184.1deg",
+          "pitch": "-32.1deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       }
     ]
@@ -1221,29 +1258,25 @@
   {
     "id": "p41",
     "file": "Panorama41.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Sauna M",
+    "subtitle": "Focus on your next rep",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p39",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
+          "yaw": "215.6deg",
+          "pitch": "-45.5deg"
+        },
+        "data": {
+          "marker": "puerta"
         }
       },
       {
-        "nodeId": "p05",
+        "nodeId": "p42",
         "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
-        }
-      },
-      {
-        "nodeId": "p02",
-        "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "348.8deg",
+          "pitch": "-52.4deg"
         }
       }
     ]
@@ -1251,29 +1284,15 @@
   {
     "id": "p42",
     "file": "Panorama42.jpg",
-    "name": "Zona de entrenamiento",
-    "subtitle": "Un espacio para superarte",
+    "name": "Sauna M",
+    "subtitle": "Recupera energía para tu próximo reto",
     "yaw": 260,
     "links": [
       {
-        "nodeId": "p03",
+        "nodeId": "p41",
         "position": {
-          "yaw": "68.5deg",
-          "pitch": "-21.6deg"
-        }
-      },
-      {
-        "nodeId": "p05",
-        "position": {
-          "yaw": "351.3deg",
-          "pitch": "-28.9deg"
-        }
-      },
-      {
-        "nodeId": "p02",
-        "position": {
-          "yaw": "69.5deg",
-          "pitch": "-10.5deg"
+          "yaw": "202.9deg",
+          "pitch": "-47deg"
         }
       }
     ]

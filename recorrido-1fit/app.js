@@ -3,6 +3,7 @@ import { VirtualTourPlugin } from '@photo-sphere-viewer/virtual-tour-plugin';
 import { EquirectangularTilesAdapter } from '@photo-sphere-viewer/equirectangular-tiles-adapter';
 import { arrivalPosition } from './orientation.js';
 import { directionalLink } from './navigation.js';
+import { initFloorplan } from './floorplan.js';
 
 const $ = (id) => document.getElementById(id);
 const error = () => { $('error').hidden = false; };
@@ -58,6 +59,7 @@ try {
     }]],
   });
   const tour = viewer.getPlugin(VirtualTourPlugin);
+  const floorplan = await initFloorplan(scenes, id => navigate(id));
   let moving = false;
   let hintTimer;
   function navigationHint(message) {
@@ -161,6 +163,7 @@ try {
     gallery.scrollBy({ left: delta * unit, behavior: 'instant' });
   }, { passive: false });
   function update(id) {
+    floorplan.setActive(id);
     const scene = scenes.find(s => s.id === id);
     $('scene-name').textContent = scene.name; $('scene-subtitle').textContent = scene.subtitle;
     $('counter').textContent = `${String(scenes.indexOf(scene)+1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}`;

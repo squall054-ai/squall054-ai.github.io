@@ -217,6 +217,13 @@
           "yaw": "329.2deg",
           "pitch": "-8.5deg"
         }
+      },
+      {
+        "nodeId": "p43",
+        "position": {
+          "yaw": "309.8deg",
+          "pitch": "-19.6deg"
+        }
       }
     ]
   },
@@ -254,6 +261,13 @@
           "yaw": "8.2deg",
           "pitch": "-11.7deg"
         }
+      },
+      {
+        "nodeId": "p43",
+        "position": {
+          "yaw": "55.6deg",
+          "pitch": "-14.5deg"
+        }
       }
     ]
   },
@@ -290,6 +304,13 @@
         "position": {
           "yaw": "5deg",
           "pitch": "-27.7deg"
+        }
+      },
+      {
+        "nodeId": "p43",
+        "position": {
+          "yaw": "133deg",
+          "pitch": "-25deg"
         }
       }
     ]
@@ -337,6 +358,13 @@
         },
         "data": {
           "marker": "puerta"
+        }
+      },
+      {
+        "nodeId": "p43",
+        "position": {
+          "yaw": "152.4deg",
+          "pitch": "-15.8deg"
         }
       }
     ]
@@ -1293,6 +1321,43 @@
         "position": {
           "yaw": "202.9deg",
           "pitch": "-47deg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "p43",
+    "file": "Panorama44.jpg",
+    "name": "Entrenamiento Funcional / Turf",
+    "subtitle": "Recupera energía para tu próximo reto",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p06",
+        "position": {
+          "yaw": "329.8deg",
+          "pitch": "-25.6deg"
+        }
+      },
+      {
+        "nodeId": "p07",
+        "position": {
+          "yaw": "4.2deg",
+          "pitch": "-19.1deg"
+        }
+      },
+      {
+        "nodeId": "p08",
+        "position": {
+          "yaw": "50.9deg",
+          "pitch": "-26deg"
+        }
+      },
+      {
+        "nodeId": "p09",
+        "position": {
+          "yaw": "73.7deg",
+          "pitch": "-19.4deg"
         }
       }
     ]

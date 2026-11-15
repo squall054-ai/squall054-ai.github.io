@@ -4,10 +4,12 @@ import { EquirectangularTilesAdapter } from '@photo-sphere-viewer/equirectangula
 import { arrivalPosition } from './orientation.js';
 import { directionalLink } from './navigation.js';
 import { initFloorplan } from './floorplan.js';
+import { loadConfig } from './configuracion.js';
 
 const $ = (id) => document.getElementById(id);
 const error = () => { $('error').hidden = false; };
 try {
+  const config = await loadConfig();
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const response = await fetch('./scenes.json', { cache: 'no-store' });
   if (!response.ok) throw new Error('No se encontró el catálogo');
@@ -16,17 +18,17 @@ try {
     id: s.id, name: s.name, caption: s.subtitle,
     data: { yaw: s.yaw },
     thumbnail: `panoramas/${s.id}/thumb.jpg`,
-    panorama: { width: 8192, cols: 8, rows: 4, baseUrl: `panoramas/${s.id}/preview.jpg`, tileUrl: (col, row) => `panoramas/${s.id}/${col}_${row}.jpg` },
+    panorama: { width: s.tiles?.width || 8192, cols: s.tiles?.cols || 8, rows: s.tiles?.rows || 4, baseUrl: `panoramas/${s.id}/preview.jpg`, tileUrl: (col, row) => `panoramas/${s.id}/${col}_${row}.jpg` },
     links: s.links || [],
   }));
   const requestedId = new URLSearchParams(location.search).get('scene');
-  const initial = scenes.find(s => s.id === requestedId) || scenes[0];
+  const initial = scenes.find(s => s.id === requestedId) || scenes.find(s => s.id === config.escenaInicial) || scenes[0];
   const viewer = new Viewer({
     container: $('viewer'),
     adapter: [EquirectangularTilesAdapter, { baseBlur: false }],
     navbar: false, keyboard: false, defaultYaw: `${initial.yaw}deg`, defaultPitch: '0deg',
     defaultZoomLvl: 25, minFov: 35, maxFov: 100,
-    loadingTxt: 'Entrando a 1Fit…',
+    loadingTxt: config.cargando,
     lang: { loadError: 'No se pudo cargar este panorama.', twoFingers: 'Usa dos dedos para mover la vista' },
     plugins: [[VirtualTourPlugin, {
       nodes, startNodeId: initial.id, positionMode: 'manual', renderMode: '2d', preload: false,
@@ -59,7 +61,7 @@ try {
     }]],
   });
   const tour = viewer.getPlugin(VirtualTourPlugin);
-  const floorplan = await initFloorplan(scenes, id => navigate(id));
+  const floorplan = config.mostrarPlano ? await initFloorplan(scenes, id => navigate(id)) : { setActive() {} };
   let moving = false;
   let hintTimer;
   function navigationHint(message) {

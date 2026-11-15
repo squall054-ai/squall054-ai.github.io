@@ -116,7 +116,7 @@ export async function initFloorplan(scenes, navigate) {
     window.addEventListener('beforeunload', event => {
       if (dirty) { event.preventDefault(); event.returnValue = ''; }
     });
-    status('El punto 02 es un ejemplo aproximado en recepción; puedes recolocarlo.');
+    status('Selecciona un panorama y haz clic en el plano para colocar o mover su punto.');
   }
   render();
   return { setActive(id) { active = id; render(); } };

@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>1Fit · Realidad virtual</title>
   <style>
-    *{box-sizing:border-box}body{margin:0;background:#111813;color:white;font:16px Arial,sans-serif}canvas{display:block}#panel{position:fixed;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(460px,90vw);padding:28px;border:1px solid #ffffff40;border-radius:18px;background:#111813ed;line-height:1.6}h1{margin:0;color:#d8f449}button,a{display:inline-block;padding:12px 18px;border-radius:9px;font:inherit}button{background:#d8f449;border:0;color:#111813;cursor:pointer;font-weight:bold}button:disabled{opacity:.5;cursor:wait}a{color:white}#status{min-height:3em}body.immersive #panel{display:none}
+    *{box-sizing:border-box}body{margin:0;background:var(--ink,#111813);color:white;font:16px Arial,sans-serif}canvas{display:block}#panel{position:fixed;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(460px,90vw);padding:28px;border:1px solid #ffffff40;border-radius:18px;background:var(--ink,#111813);line-height:1.6}h1{margin:0;color:var(--lime,#d8f449)}button,a{display:inline-block;padding:12px 18px;border-radius:9px;font:inherit}button{background:var(--lime,#d8f449);border:0;color:var(--ink,#111813);cursor:pointer;font-weight:bold}button:disabled{opacity:.5;cursor:wait}a{color:white}#status{min-height:3em}body.immersive #panel{display:none}
+  </style>
+  <style>
+    #panel{max-height:94dvh;overflow-y:auto}#quality{display:block;width:100%;margin:8px 0;padding:12px;border:1px solid #ffffff60;border-radius:8px;background:var(--ink,#111813);color:white;font:inherit}#quality-note{font-size:13px;color:#d1d8d1;line-height:1.5}label[for=quality]{font-weight:bold}
   </style>
   <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
 </head>
@@ -14,6 +17,12 @@
     <h1>1Fit en VR</h1>
     <p>Mira alrededor con las gafas. Apunta a un marcador con el mando y pulsa el gatillo para cambiar de panorama.</p>
     <p>El recorrido es de fotos 360°: puedes mirar en todas direcciones y saltar entre puntos.</p>
+    <label for="quality">Calidad en VR</label>
+    <select id="quality" aria-describedby="quality-note" disabled>
+      <option value="8k">Hasta 8K · Recomendada</option>
+      <option value="16k">Hasta 16K · Máximo detalle</option>
+    </select>
+    <p id="quality-note">Comprobando resoluciones disponibles…</p>
     <p id="status" role="status">Comprobando compatibilidad…</p>
     <button id="enter" disabled>Entrar en VR</button>
     <a id="back" href="./">Volver al recorrido</a>

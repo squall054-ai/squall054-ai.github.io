@@ -1,5 +1,8 @@
 import * as THREE from 'three';
 import { arrivalPosition } from './orientation.js';
+import { loadConfig } from './configuracion.js';
+import { qualitySource, supportsHighQuality } from './vr-quality.js';
+import { markerPlacement } from './vr-markers.js';
 
 const status = document.getElementById('status');
 const enter = document.getElementById('enter');
@@ -9,10 +12,11 @@ const rad = THREE.MathUtils.degToRad;
 let renderer;
 
 try {
+  const config = await loadConfig();
   const response = await fetch('./scenes.json', { cache: 'no-store' });
   if (!response.ok) throw new Error('No se pudo cargar el catálogo.');
   const nodes = await response.json();
-  let current = nodes.find(n => n.id === params.get('scene')) || nodes[0];
+  let current = nodes.find(n => n.id === params.get('scene')) || nodes.find(n => n.id === config.escenaInicial) || nodes[0];
   let busy = false;
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.05, 200);
@@ -22,6 +26,24 @@ try {
   renderer.xr.enabled = true;
   renderer.xr.setReferenceSpaceType('local');
   renderer.outputColorSpace = THREE.SRGBColorSpace;
+  const quality = document.getElementById('quality');
+  const qualityNote = document.getElementById('quality-note');
+  const preferenceKey = `tour-vr-quality:${location.pathname}`;
+  const highAvailable = supportsHighQuality(nodes, renderer.capabilities.maxTextureSize);
+  quality.querySelector('[value="16k"]').disabled = !highAvailable;
+  try { if (localStorage.getItem(preferenceKey) === '16k' && highAvailable) quality.value = '16k'; } catch {}
+  const describeQuality = () => {
+    qualityNote.textContent = quality.value === '16k'
+      ? 'Mayor consumo de memoria y descarga. Puede causar tirones o cerrar la pestaña. Los originales de menor resolución no se amplían.'
+      : 'Menor consumo de memoria y descarga. Los originales de menor resolución se conservan.';
+    if (!highAvailable) qualityNote.textContent += renderer.capabilities.maxTextureSize < 16384
+      ? ' Este dispositivo no admite texturas de 16K.' : ' Este recorrido todavía no contiene originales superiores a 8K.';
+  };
+  quality.disabled = false; describeQuality();
+  quality.addEventListener('change', () => {
+    describeQuality();
+    try { localStorage.setItem(preferenceKey, quality.value); } catch {}
+  });
   document.body.prepend(renderer.domElement);
   const world = new THREE.Group();
   scene.add(world);
@@ -66,13 +88,17 @@ try {
     for (const marker of [...markers.children]) { markers.remove(marker); marker.geometry.dispose(); marker.material.dispose(); }
     for (const link of current.links || []) {
       const door = link.data?.marker === 'puerta';
-      const yaw = rad(parseFloat(link.position.yaw));
-      const pitch = rad(parseFloat(link.position.pitch));
-      const marker = new THREE.Mesh(new THREE.PlaneGeometry(0.48,0.48),
+      const placement = markerPlacement(link, config.alturaMarcadoresVR);
+      const marker = new THREE.Mesh(new THREE.PlaneGeometry(placement.size, placement.size),
         new THREE.MeshBasicMaterial({ map: markerTexture(door), transparent: true, side: THREE.DoubleSide, depthWrite: false }));
-      marker.position.set(-Math.cos(pitch)*Math.sin(yaw), Math.sin(pitch), Math.cos(pitch)*Math.cos(yaw)).multiplyScalar(3);
-      marker.lookAt(0,0,0);
-      if (!door) marker.rotateX(-Math.PI / 3);
+      marker.position.set(placement.x, placement.y, placement.z);
+      if (placement.floor) {
+        marker.rotation.x = -Math.PI / 2;
+        marker.rotateZ(Math.PI - placement.yaw);
+      } else {
+        // Puertas verticales: no inclinar el botón hacia la altura de los ojos.
+        marker.lookAt(0, marker.position.y, 0);
+      }
       marker.userData.link = link;
       markers.add(marker);
     }
@@ -84,26 +110,38 @@ try {
     texture.minFilter = THREE.LinearFilter;
     return texture;
   }
-  function applyTexture(texture) { const old = sphere.material.map; sphere.material.map = texture; sphere.material.needsUpdate = true; old?.dispose(); }
-  // Cargar únicamente el panorama activo. Reutilizar los mosaicos 8K existentes.
+  function applyTexture(texture) {
+    const old = sphere.material.map;
+    sphere.material.map = texture; sphere.material.needsUpdate = true;
+    old?.dispose();
+    if (old?.image instanceof HTMLCanvasElement) old.image.width = old.image.height = 1;
+  }
   let qualityGeneration = 0;
   async function upgradeQuality(node) {
     const generation = ++qualityGeneration;
-    const width = Math.min(8192, renderer.capabilities.maxTextureSize);
+    const { cols, rows, width, directory } = qualitySource(node, quality.value, renderer.capabilities.maxTextureSize);
     const canvas = document.createElement('canvas'); canvas.width = width; canvas.height = width / 2;
     const ctx = canvas.getContext('2d');
+    let retained = false;
     try {
-      for (let row = 0; row < 4; row++) {
-        for (let col = 0; col < 8; col++) {
+      if (!ctx) throw new Error('No hay memoria para crear la textura VR.');
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
           if (generation !== qualityGeneration) return;
           const image = new Image();
-          image.src = `panoramas/${node.id}/${col}_${row}.jpg`;
+          image.src = `panoramas/${node.id}/${directory}${col}_${row}.jpg`;
           await image.decode();
-          ctx.drawImage(image, col*width/8, row*width/8, width/8, width/8);
+          if (generation !== qualityGeneration) return;
+          ctx.drawImage(image, col*width/cols, row*canvas.height/rows, width/cols, canvas.height/rows);
         }
       }
-      if (generation === qualityGeneration && current.id === node.id) applyTexture(textureOptions(new THREE.CanvasTexture(canvas)));
-    } catch (err) { console.warn('VR: se conserva la vista previa; no se pudieron cargar todos los mosaicos.', err); }
+      if (generation === qualityGeneration && current.id === node.id) {
+        applyTexture(textureOptions(new THREE.CanvasTexture(canvas))); retained = true;
+      }
+    } catch (err) {
+      console.warn('VR: se conserva la vista previa; no se pudieron cargar todos los mosaicos.', err);
+      status.textContent = 'No se pudo cargar la calidad elegida. Prueba 8K o vuelve a intentarlo.';
+    } finally { if (!retained) canvas.width = canvas.height = 1; }
   }
   async function travel(link) {
     if (busy) return;
@@ -130,7 +168,7 @@ try {
   const controllers = [0,1].map(index => {
     const controller = renderer.xr.getController(index);
     const beam = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(),new THREE.Vector3(0,0,-1)]),
-      new THREE.LineBasicMaterial({ color: 0xd8f449 }));
+      new THREE.LineBasicMaterial({ color: config.colorAcento }));
     beam.scale.z = 3; controller.add(beam); scene.add(controller);
     controller.addEventListener('select', () => {
       const hit = hitMarker(controller);
@@ -156,7 +194,7 @@ try {
     scene.updateMatrixWorld(true);
     markers.children.forEach(m => m.material.color.setHex(busy ? 0xaaaaaa : 0xffffff));
     if (!busy && renderer.xr.isPresenting) for (const controller of controllers) {
-      const hit = hitMarker(controller); if (hit) hit.object.material.color.setHex(0xd8f449);
+      const hit = hitMarker(controller); if (hit) hit.object.material.color.set(config.colorAcento);
     }
     if (fade) {
       const progress = Math.min(1, (performance.now() - fade.start) / fade.duration);
@@ -165,11 +203,18 @@ try {
     }
     renderer.render(scene,camera);
   });
-  void upgradeQuality(current);
+  // No descargar texturas grandes hasta que el usuario elija calidad y entre.
   addEventListener('resize', () => {
     camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight);
   });
   renderer.xr.addEventListener('sessionend', () => {
+    qualityGeneration++;
+    const stoppedGeneration = qualityGeneration;
+    loader.loadAsync(`panoramas/${current.id}/preview.jpg`).then(texture => {
+      if (qualityGeneration === stoppedGeneration && !renderer.xr.isPresenting) applyTexture(textureOptions(texture));
+      else texture.dispose();
+    }).catch(console.warn);
+    quality.disabled = false;
     document.body.classList.remove('immersive'); enter.disabled = false;
     status.textContent = 'Sesión finalizada. Puedes volver a entrar o regresar al recorrido.';
   });
@@ -178,14 +223,16 @@ try {
   else { enter.disabled = false; status.textContent = 'Gafas compatibles detectadas. Pulsa Entrar en VR.'; }
   enter.addEventListener('click', async () => {
     enter.disabled = true;
+    quality.disabled = true;
     let session;
     try {
       session = await navigator.xr.requestSession('immersive-vr', { optionalFeatures: ['local-floor'] });
       await renderer.xr.setSession(session);
       document.body.classList.add('immersive');
+      void upgradeQuality(current);
     } catch (err) {
       await session?.end().catch(() => {});
-      console.error(err); enter.disabled = false;
+      console.error(err); enter.disabled = false; quality.disabled = false;
       status.textContent = 'No se pudo iniciar VR. Comprueba los permisos de las gafas e inténtalo de nuevo.';
     }
   });

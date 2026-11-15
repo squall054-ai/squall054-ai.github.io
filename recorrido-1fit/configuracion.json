@@ -1,0 +1,20 @@
+{
+  "nombre": "1Fit",
+  "marcaInicio": "1",
+  "marcaResto": "Fit",
+  "marcaSimbolo": "®",
+  "logo": "",
+  "titulo": "1Fit · Recorrido virtual",
+  "descripcion": "Explora 1Fit en un recorrido virtual de 360 grados.",
+  "encabezado": "DESCUBRE EL ESPACIO",
+  "galeria": "EXPLORA 1FIT",
+  "cargando": "Entrando a 1Fit…",
+  "colorAcento": "#d8f449",
+  "colorFondo": "#111813",
+  "mostrarVR": true,
+  "mostrarPlano": true,
+  "imagenPlano": "assets/plano-1fit.jpg",
+  "tituloPlano": "Plano de 1Fit",
+  "escenaInicial": "",
+  "alturaMarcadoresVR": 1.65
+}

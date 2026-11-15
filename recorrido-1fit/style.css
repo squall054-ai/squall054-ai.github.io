@@ -31,8 +31,8 @@ dialog{background:#15211b;color:white;border:1px solid #435042;border-radius:18p
 .plan-stage{position:relative;margin-inline:auto}
 .plan-stage img{display:block;width:100%;height:auto}
 .plan-stage-mini .plan-preview-button img{max-height:none}
-.plan-stage-full{width:min(100%,calc((90dvh - 120px) * 1.778));border-radius:8px}
-#plan-dialog:has(.plan-editor:not([hidden])) .plan-stage-full{width:min(100%,calc((90dvh - 285px) * 1.778));min-width:240px}
+.plan-stage-full{width:min(100%,calc((90dvh - 120px) * var(--plan-ratio,1.778)));border-radius:8px}
+#plan-dialog:has(.plan-editor:not([hidden])) .plan-stage-full{width:min(100%,calc((90dvh - 285px) * var(--plan-ratio,1.778)));min-width:240px}
 .plan-point{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;border:2px solid #fff;background:#17251ee8;color:white;display:grid;place-items:center;font-size:10px;padding:0;box-shadow:0 2px 8px #0009;z-index:1}
 .plan-point:hover,.plan-point[aria-current=true]{background:var(--lime);color:var(--ink);border-color:var(--lime);z-index:2}
 .plan-point.point-selected{outline:2px solid #75dfff;outline-offset:3px}
@@ -45,3 +45,6 @@ dialog{background:#15211b;color:white;border:1px solid #435042;border-radius:18p
 #plan-export{background:var(--lime);color:var(--ink)}
 #plan-status{font-size:12px;line-height:1.4;margin:8px 0}
 .plan-editing{cursor:crosshair}
+
+/* Identidad configurable del recorrido. */
+.brand img{display:block;max-width:190px;max-height:48px;object-fit:contain}.brand.brand-custom{font-size:clamp(18px,3vw,30px);letter-spacing:-.5px;font-style:normal}.floorplan-widget[hidden],#vr[hidden]{display:none}

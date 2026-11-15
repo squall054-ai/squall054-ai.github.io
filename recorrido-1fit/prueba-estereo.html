@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Panorama 11 · Prueba estereoscópica</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#111813;color:white;font:16px Arial,sans-serif}canvas{display:block}
+    #panel{position:fixed;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(480px,94vw);max-height:94dvh;overflow:auto;padding:24px;border:1px solid #ffffff50;border-radius:16px;background:#111813f5;line-height:1.5}
+    h1{font-size:24px;color:var(--lime,#d8f449)}select,button{font:inherit;padding:12px;width:100%;margin:8px 0;border-radius:8px}select{color:white;background:#233127}button{background:var(--lime,#d8f449);border:0;color:#111813;cursor:pointer}button:disabled{opacity:.5}a{color:white}body.immersive #panel{display:none}small{display:block;color:#c2c9c1}
+  </style>
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <section id="panel">
+    <h1>Panorama 11 · Prueba VR</h1>
+    <p>Misma captura, distinta profundidad. Prueba primero el modo estereoscópico y luego el monoscópico.</p>
+    <label for="stereo-mode">Modo de comparación</label>
+    <select id="stereo-mode">
+      <option value="stereo">Estereoscópico · Una imagen por ojo</option>
+      <option value="mono">Monoscópico · Misma imagen en ambos ojos</option>
+      <option value="swapped">Estereoscópico · Ojos intercambiados</option>
+    </select>
+    <small>2K por ojo. Sal de VR con el menú de las gafas para cambiar de modo. Si la profundidad se ve invertida o incómoda, sal y prueba ojos intercambiados.</small>
+    <p id="status" role="status">Cargando panorama…</p>
+    <button id="enter" disabled>Entrar en VR</button>
+    <a href="./?scene=p11">Volver al recorrido normal</a>
+    <p><small>Prueba sin marcadores. Permite mirar alrededor, pero no caminar dentro de la fotografía.</small></p>
+  </section>
+  <script type="module" src="prueba-estereo.js"></script>
+</body>
+</html>

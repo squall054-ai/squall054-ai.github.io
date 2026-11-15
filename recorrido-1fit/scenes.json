@@ -1834,5 +1834,42 @@
       "rows": 4,
       "directory": ""
     }
+  },
+  {
+    "id": "p44",
+    "file": "Panorama44.jpg",
+    "name": "Entrenamiento Funcional / Turf",
+    "subtitle": "Recupera energía para tu próximo reto",
+    "yaw": 260,
+    "links": [
+      {
+        "nodeId": "p09",
+        "position": {
+          "yaw": "164.4deg",
+          "pitch": "-46deg"
+        },
+        "data": {
+          "marker": "puerta"
+        }
+      },
+      {
+        "nodeId": "p12",
+        "position": {
+          "yaw": "34.6deg",
+          "pitch": "-18.1deg"
+        }
+      }
+    ],
+    "tiles": {
+      "width": 2048,
+      "cols": 2,
+      "rows": 1
+    },
+    "vrTiles": {
+      "width": 2048,
+      "cols": 2,
+      "rows": 1,
+      "directory": ""
+    }
   }
 ]

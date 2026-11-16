@@ -488,6 +488,13 @@
       "cols": 8,
       "rows": 4
     },
+    "stereoTiles": {
+      "width": 8192,
+      "cols": 8,
+      "rows": 4,
+      "directory": "stereo/",
+      "layout": "top-bottom"
+    },
     "vrTiles": {
       "width": 8192,
       "cols": 8,
@@ -525,6 +532,13 @@
       "cols": 8,
       "rows": 4
     },
+    "stereoTiles": {
+      "width": 8192,
+      "cols": 8,
+      "rows": 4,
+      "directory": "stereo/",
+      "layout": "top-bottom"
+    },
     "vrTiles": {
       "width": 8192,
       "cols": 8,
@@ -551,6 +565,13 @@
       "width": 8192,
       "cols": 8,
       "rows": 4
+    },
+    "stereoTiles": {
+      "width": 8192,
+      "cols": 8,
+      "rows": 4,
+      "directory": "stereo/",
+      "layout": "top-bottom"
     },
     "vrTiles": {
       "width": 8192,

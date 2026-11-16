@@ -17,6 +17,12 @@
     <h1>1Fit en VR</h1>
     <p>Mira alrededor con las gafas. Apunta a un marcador con el mando y pulsa el gatillo para cambiar de panorama.</p>
     <p>El recorrido es de fotos 360°: puedes mirar en todas direcciones y saltar entre puntos.</p>
+    <label for="view-mode">Vista en VR</label>
+    <select id="view-mode" style="display:block;width:100%;padding:12px;margin:8px 0;font:inherit">
+      <option value="mono">Monoscópico · Predeterminado</option>
+      <option value="stereo">Estereoscópico · Profundidad 3D</option>
+    </select>
+    <p id="mode-note">El modo 3D usa estéreo donde esté disponible y mono en los demás puntos. Para cambiar de modo, sal de VR y vuelve a entrar. El estéreo puede resultar incómodo al mirar hacia el suelo o inclinar la cabeza.</p>
     <label for="quality">Calidad en VR</label>
     <select id="quality" aria-describedby="quality-note" disabled>
       <option value="8k">Hasta 8K · Recomendada</option>

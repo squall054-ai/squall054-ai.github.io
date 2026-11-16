@@ -20,6 +20,7 @@ try {
   let busy = false;
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.05, 200);
+  camera.layers.enable(1);
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
   renderer.setSize(innerWidth, innerHeight);
@@ -28,11 +29,18 @@ try {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   const quality = document.getElementById('quality');
   const qualityNote = document.getElementById('quality-note');
+  const viewMode = document.getElementById('view-mode');
+  viewMode.querySelector('[value="stereo"]').disabled = !nodes.some(n => n.stereoTiles);
   const preferenceKey = `tour-vr-quality:${location.pathname}`;
   const highAvailable = supportsHighQuality(nodes, renderer.capabilities.maxTextureSize);
   quality.querySelector('[value="16k"]').disabled = !highAvailable;
   try { if (localStorage.getItem(preferenceKey) === '16k' && highAvailable) quality.value = '16k'; } catch {}
   const describeQuality = () => {
+    quality.disabled = renderer.xr.isPresenting || viewMode.value === 'stereo';
+    if (viewMode.value === 'stereo') {
+      qualityNote.textContent = 'Estéreo: hasta 8K por ojo. Los puntos sin versión 3D usan mono hasta 8K. Consume más memoria que monoscópico.';
+      return;
+    }
     qualityNote.textContent = quality.value === '16k'
       ? 'Mayor consumo de memoria y descarga. Puede causar tirones o cerrar la pestaña. Los originales de menor resolución no se amplían.'
       : 'Menor consumo de memoria y descarga. Los originales de menor resolución se conservan.';
@@ -40,6 +48,7 @@ try {
       ? ' Este dispositivo no admite texturas de 16K.' : ' Este recorrido todavía no contiene originales superiores a 8K.';
   };
   quality.disabled = false; describeQuality();
+  viewMode.addEventListener('change', describeQuality);
   quality.addEventListener('change', () => {
     describeQuality();
     try { localStorage.setItem(preferenceKey, quality.value); } catch {}
@@ -53,6 +62,19 @@ try {
     new THREE.MeshBasicMaterial({ color: 0xffffff })
   );
   world.add(sphere);
+  sphere.layers.set(1);
+  const rightSphere = new THREE.Mesh(sphere.geometry, new THREE.MeshBasicMaterial({ color: 0xffffff }));
+  rightSphere.layers.set(2);
+  world.add(rightSphere);
+  for (const mesh of [sphere, rightSphere]) {
+    const position = new THREE.Vector3();
+    mesh.frustumCulled = false;
+    mesh.onBeforeRender = (_renderer, _scene, eyeCamera) => {
+      position.setFromMatrixPosition(eyeCamera.matrixWorld);
+      mesh.position.copy(world.worldToLocal(position));
+      mesh.updateMatrixWorld(true);
+    };
+  }
   const markers = new THREE.Group();
   world.add(markers);
   const loader = new THREE.TextureLoader();
@@ -110,16 +132,28 @@ try {
     texture.minFilter = THREE.LinearFilter;
     return texture;
   }
-  function applyTexture(texture) {
-    const old = sphere.material.map;
+  function disposeTexture(texture) {
+    texture?.dispose();
+    if (texture?.image instanceof HTMLCanvasElement) texture.image.width = texture.image.height = 1;
+  }
+  function applyTexture(texture, right = texture) {
+    const old = new Set([sphere.material.map, rightSphere.material.map]);
     sphere.material.map = texture; sphere.material.needsUpdate = true;
-    old?.dispose();
-    if (old?.image instanceof HTMLCanvasElement) old.image.width = old.image.height = 1;
+    rightSphere.material.map = right; rightSphere.material.needsUpdate = true;
+    old.forEach(disposeTexture);
   }
   let qualityGeneration = 0;
   async function upgradeQuality(node) {
     const generation = ++qualityGeneration;
-    const { cols, rows, width, directory } = qualitySource(node, quality.value, renderer.capabilities.maxTextureSize);
+    const stereo = viewMode.value === 'stereo' && node.stereoTiles;
+    const spec = stereo
+      ? { ...node.stereoTiles, width: Math.min(node.stereoTiles.width, 8192, renderer.capabilities.maxTextureSize) }
+      : qualitySource(node, viewMode.value === 'stereo' ? '8k' : quality.value, renderer.capabilities.maxTextureSize);
+    const { cols, rows, width, directory } = spec;
+    const loaded = [];
+    let applied = false;
+    try {
+    for (const prefix of stereo ? ['left_', 'right_'] : ['']) {
     const canvas = document.createElement('canvas'); canvas.width = width; canvas.height = width / 2;
     const ctx = canvas.getContext('2d');
     let retained = false;
@@ -129,19 +163,24 @@ try {
         for (let col = 0; col < cols; col++) {
           if (generation !== qualityGeneration) return;
           const image = new Image();
-          image.src = `panoramas/${node.id}/${directory}${col}_${row}.jpg`;
+          image.src = `panoramas/${node.id}/${directory}${prefix}${col}_${row}.jpg`;
           await image.decode();
           if (generation !== qualityGeneration) return;
           ctx.drawImage(image, col*width/cols, row*canvas.height/rows, width/cols, canvas.height/rows);
         }
       }
       if (generation === qualityGeneration && current.id === node.id) {
-        applyTexture(textureOptions(new THREE.CanvasTexture(canvas))); retained = true;
+        loaded.push(textureOptions(new THREE.CanvasTexture(canvas))); retained = true;
       }
+    } finally { if (!retained) canvas.width = canvas.height = 1; }
+    }
+    if (generation === qualityGeneration && current.id === node.id && loaded.length === (stereo ? 2 : 1)) {
+      applyTexture(loaded[0], loaded[1] || loaded[0]); applied = true;
+    }
     } catch (err) {
       console.warn('VR: se conserva la vista previa; no se pudieron cargar todos los mosaicos.', err);
       status.textContent = 'No se pudo cargar la calidad elegida. Prueba 8K o vuelve a intentarlo.';
-    } finally { if (!retained) canvas.width = canvas.height = 1; }
+    } finally { if (!applied) loaded.forEach(disposeTexture); }
   }
   async function travel(link) {
     if (busy) return;
@@ -158,7 +197,7 @@ try {
       current = target;
       applyTexture(texture); setMarkers(); updateBackLink();
       await fadeTo(0);
-      void upgradeQuality(current);
+      if (renderer.xr.isPresenting) void upgradeQuality(current);
     } catch (err) {
       console.error(err);
       status.textContent = 'No se pudo abrir ese panorama. Puedes volver a intentarlo.';
@@ -214,7 +253,8 @@ try {
       if (qualityGeneration === stoppedGeneration && !renderer.xr.isPresenting) applyTexture(textureOptions(texture));
       else texture.dispose();
     }).catch(console.warn);
-    quality.disabled = false;
+    viewMode.disabled = false;
+    describeQuality();
     document.body.classList.remove('immersive'); enter.disabled = false;
     status.textContent = 'Sesión finalizada. Puedes volver a entrar o regresar al recorrido.';
   });
@@ -224,6 +264,7 @@ try {
   enter.addEventListener('click', async () => {
     enter.disabled = true;
     quality.disabled = true;
+    viewMode.disabled = true;
     let session;
     try {
       session = await navigator.xr.requestSession('immersive-vr', { optionalFeatures: ['local-floor'] });
@@ -233,6 +274,7 @@ try {
     } catch (err) {
       await session?.end().catch(() => {});
       console.error(err); enter.disabled = false; quality.disabled = false;
+      viewMode.disabled = false; describeQuality();
       status.textContent = 'No se pudo iniciar VR. Comprueba los permisos de las gafas e inténtalo de nuevo.';
     }
   });

@@ -3,6 +3,7 @@ import { arrivalPosition } from './orientation.js';
 import { loadConfig } from './configuracion.js';
 import { qualitySource, supportsHighQuality } from './vr-quality.js';
 import { markerPlacement } from './vr-markers.js';
+import { createStickAction, directionalLink } from './vr-turn.js';
 
 const status = document.getElementById('status');
 const enter = document.getElementById('enter');
@@ -225,7 +226,17 @@ try {
   world.rotation.y = Math.PI + rad(Number.isFinite(initialYaw) ? initialYaw : 0);
   applyTexture(textureOptions(await loader.loadAsync(`panoramas/${current.id}/preview.jpg`)));
   setMarkers(); updateBackLink();
+  const stickAction = createStickAction();
   renderer.setAnimationLoop(() => {
+    const session = renderer.xr.getSession();
+    // Rotar el entorno equivale al giro contrario de la cámara: positivo mira a la derecha.
+    const action = stickAction(session?.inputSources, busy || !renderer.xr.isPresenting);
+    if (action?.turn) world.rotation.y += action.turn;
+    if (action?.travel) {
+      renderer.xr.getCamera().getWorldDirection(direction);
+      const link = directionalLink(current.links, direction, world.rotation.y, action.travel === 'backward');
+      if (link) void travel(link);
+    }
     const activeCamera = renderer.xr.isPresenting ? renderer.xr.getCamera() : camera;
     activeCamera.getWorldPosition(eye);
     // Una foto 360 no tiene profundidad: conservar el centro de captura.

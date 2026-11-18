@@ -5,6 +5,7 @@ import { arrivalPosition } from './orientation.js';
 import { directionalLink } from './navigation.js';
 import { initFloorplan } from './floorplan.js';
 import { loadConfig } from './configuracion.js';
+import { initPoi } from './poi.js';
 
 const $ = (id) => document.getElementById(id);
 const error = () => { $('error').hidden = false; };
@@ -61,6 +62,7 @@ try {
     }]],
   });
   const tour = viewer.getPlugin(VirtualTourPlugin);
+  const poi = await initPoi(viewer, scenes, initial.id);
   const floorplan = config.mostrarPlano ? await initFloorplan(scenes, id => navigate(id)) : { setActive() {} };
   let moving = false;
   let hintTimer;
@@ -165,6 +167,7 @@ try {
     gallery.scrollBy({ left: delta * unit, behavior: 'instant' });
   }, { passive: false });
   function update(id) {
+    poi.setActive(id);
     floorplan.setActive(id);
     const scene = scenes.find(s => s.id === id);
     $('scene-name').textContent = scene.name; $('scene-subtitle').textContent = scene.subtitle;
